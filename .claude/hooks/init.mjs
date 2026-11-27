@@ -1,4 +1,4 @@
-const { execSync } = require('child_process')
+import { execSync } from 'node:child_process'
 
 const dia = new Date().toLocaleString('pt-BR')
 
@@ -8,7 +8,9 @@ let commit = 'sem commits'
 try {
   branch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim()
   commit = execSync('git log -1 --pretty=format:"%h %s"').toString().trim()
-} catch (_) { }
+} catch {
+  // Fora de um repositório git ou sem commits: mantém os valores padrão
+}
 
 const context = `Sessão iniciada em: ${dia}\nBranch: ${branch}\nÚltimo commit: ${commit}`
 

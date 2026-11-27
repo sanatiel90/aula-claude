@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/init.js\""
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/init.mjs\""
           }
         ]
       }
@@ -16,7 +16,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node .claude/hooks/session-stop.js"
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/session-stop.mjs\""
           }
         ]
       }
